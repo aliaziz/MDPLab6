@@ -1,16 +1,15 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.miu.mdp.resumebuildermary.databinding.FragmentEducationBinding
-import com.miu.mdp.resumebuildermary.databinding.WorkExpItemBinding
+import com.miu.mdp.mdp_lab6.databinding.FragmentEducationBinding
+import com.miu.mdp.mdp_lab6.databinding.WorkExpItemBinding
 
 class WorkExpFrag : Fragment() {
 

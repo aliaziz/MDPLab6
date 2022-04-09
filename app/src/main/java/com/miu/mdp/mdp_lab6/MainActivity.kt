@@ -1,15 +1,12 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
-import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.miu.mdp.resumebuildermary.databinding.ActivityMainBinding
+import com.miu.mdp.mdp_lab6.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding

@@ -1,4 +1,4 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.os.Bundle
 import android.view.LayoutInflater

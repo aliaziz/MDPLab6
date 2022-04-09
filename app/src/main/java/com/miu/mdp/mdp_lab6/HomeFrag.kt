@@ -1,4 +1,4 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.miu.mdp.resumebuildermary.databinding.FragmentHomeBinding
+import com.miu.mdp.mdp_lab6.databinding.FragmentHomeBinding
 
 class HomeFrag : Fragment() {
 

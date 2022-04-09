@@ -1,4 +1,4 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.content.Context
 import com.google.gson.Gson

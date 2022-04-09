@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ResumeBuilderMary"
+rootProject.name = "MDPLab6"
 include ':app'

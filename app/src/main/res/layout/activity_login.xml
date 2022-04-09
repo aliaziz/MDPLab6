@@ -8,7 +8,7 @@
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.miu.mdp.resumebuildermary.LoginFrag"
+        android:name="com.miu.mdp.mdp_lab6.LoginFrag"
         android:id="@+id/container"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

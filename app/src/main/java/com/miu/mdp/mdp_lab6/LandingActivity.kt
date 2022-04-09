@@ -1,8 +1,8 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.miu.mdp.resumebuildermary.databinding.ActivityLoginBinding
+import com.miu.mdp.mdp_lab6.databinding.ActivityLoginBinding
 
 class LandingActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding

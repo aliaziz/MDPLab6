@@ -1,4 +1,4 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

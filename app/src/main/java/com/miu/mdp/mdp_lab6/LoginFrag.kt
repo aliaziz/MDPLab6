@@ -1,4 +1,4 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.miu.mdp.resumebuildermary.databinding.FragmentLoginBinding
+import com.miu.mdp.mdp_lab6.databinding.FragmentLoginBinding
 
 lateinit var dataSource: ResumeDataSource
 var user: User? = null

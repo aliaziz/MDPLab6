@@ -1,4 +1,4 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 interface ResumeRepository {
     fun saveUser(fullName: String, email: String, password: String)

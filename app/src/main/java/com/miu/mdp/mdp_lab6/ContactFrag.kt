@@ -1,4 +1,4 @@
-package com.miu.mdp.resumebuildermary
+package com.miu.mdp.mdp_lab6
 
 import android.content.Intent
 import android.net.Uri
@@ -10,8 +10,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.miu.mdp.resumebuildermary.databinding.ContactItemBinding
-import com.miu.mdp.resumebuildermary.databinding.FragmentEducationBinding
+import com.miu.mdp.mdp_lab6.databinding.ContactItemBinding
+import com.miu.mdp.mdp_lab6.databinding.FragmentEducationBinding
 import java.util.*
 
 class ContactFrag : Fragment() {

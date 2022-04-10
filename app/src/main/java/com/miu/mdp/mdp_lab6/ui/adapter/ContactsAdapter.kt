@@ -47,7 +47,7 @@ class ContactsAdapter(private val contacts: List<Contact>): RecyclerView.Adapter
                         Intent(Intent.ACTION_SENDTO).apply {
                             data = Uri.parse("mailto:")
                             putExtra(Intent.EXTRA_EMAIL, contact.contactData)
-                            putExtra(Intent.EXTRA_SUBJECT, "Mary G Talemwa Resume")
+                            putExtra(Intent.EXTRA_SUBJECT, "Ali Ziwa")
                         }
                     }
                     ContactType.LINK -> {

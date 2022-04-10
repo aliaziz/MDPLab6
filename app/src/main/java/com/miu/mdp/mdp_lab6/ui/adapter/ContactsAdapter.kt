@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.miu.mdp.mdp_lab6.R
 import com.miu.mdp.mdp_lab6.model.Contact
 import com.miu.mdp.mdp_lab6.model.ContactType
 import com.miu.mdp.mdp_lab6.databinding.ContactItemBinding
@@ -62,6 +63,16 @@ class ContactsAdapter(private val contacts: List<Contact>): RecyclerView.Adapter
                     Toast.makeText(context, "No app to open this", Toast.LENGTH_SHORT).show()
                 }
             }
+            val context = binding.root.context.resources
+            when(contact.contactType) {
+                ContactType.PHONE -> binding.avatar.setImageDrawable(context.getDrawable(R.drawable.ic_call_black_24dp,
+                    null))
+                ContactType.EMAIL -> binding.avatar.setImageDrawable(context.getDrawable(R.drawable.ic_email_black_24dp,
+                    null))
+                ContactType.LINK -> binding.avatar.setImageDrawable(context.getDrawable(R.drawable.ic_public_black_24dp,
+                    null))
+            }
+
         }
     }
 }

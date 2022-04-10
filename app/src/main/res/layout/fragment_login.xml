@@ -4,19 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterFrag">
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/image_logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/logo" />
+    android:background="#efebe9"
+    tools:context=".ui.fragment.RegisterFrag">
 
     <androidx.cardview.widget.CardView
-        app:layout_constraintTop_toBottomOf="@id/image_logo"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
@@ -35,7 +27,9 @@
                 android:layout_margin="8dp"
                 android:id="@+id/email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/text_field_background"
+                android:layout_height="40dp"
                 android:inputType="textEmailAddress" />
 
             <EditText
@@ -43,15 +37,28 @@
                 android:layout_margin="8dp"
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/text_field_background"
+                android:layout_height="40dp"
                 android:inputType="textPassword" />
 
             <Button
-                android:layout_margin="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/login"
                 android:text="@string/login"/>
+            <Button
+                style="@style/Theme.ResumeBuilderMary.NoBackgroundButtonStyle"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/register"
+                android:textAllCaps="false"
+                android:text="@string/no_account_register"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

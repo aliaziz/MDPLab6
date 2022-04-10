@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity"
+    android:background="#efebe9">
 
 
     <androidx.viewpager2.widget.ViewPager2
@@ -16,7 +17,7 @@
 
     <Button
         android:id="@+id/prevFrag"
-        style="@style/Theme.ResumeBuilderMary.ButtonStyle"
+        style="@style/Theme.ResumeBuilderMary.NoBackgroundButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -27,7 +28,7 @@
 
     <Button
         android:id="@+id/nextFrag"
-        style="@style/Theme.ResumeBuilderMary.ButtonStyle"
+        style="@style/Theme.ResumeBuilderMary.NoBackgroundButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"

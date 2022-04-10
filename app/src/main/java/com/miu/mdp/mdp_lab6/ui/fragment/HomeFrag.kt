@@ -1,4 +1,4 @@
-package com.miu.mdp.mdp_lab6
+package com.miu.mdp.mdp_lab6.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.miu.mdp.mdp_lab6.databinding.FragmentHomeBinding
+import com.miu.mdp.mdp_lab6.logic.authUser
+import com.miu.mdp.mdp_lab6.logic.dataSource
+import com.miu.mdp.mdp_lab6.logic.sessionUser
 
 class HomeFrag : Fragment() {
 
-    lateinit var homeBinding: FragmentHomeBinding
+    private lateinit var homeBinding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,18 +25,20 @@ class HomeFrag : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sessionUser = dataSource.getSessionUser(authUser!!.email)
+
         Glide.with(requireContext())
-            .load(user?.profilePic)
+            .load(sessionUser?.profilePic)
             .into(homeBinding.profilePic)
 
         with(homeBinding) {
-            name.text = user?.fullName
-            profession.text = user?.profession
-            description.text = user?.description
-            tools.text = user?.tools?.map { entry ->
+            name.text = sessionUser?.fullName
+            profession.text = sessionUser?.profession
+            description.text = sessionUser?.description
+            tools.text = sessionUser?.tools?.map { entry ->
                 entry.key + ": "+entry.value
-            }?.reduce { a, b ->
-                a +"\n" + b + "\n"
+            }?.reduce { accumulator, next ->
+                accumulator +"\n" + next + "\n"
             }
         }
     }

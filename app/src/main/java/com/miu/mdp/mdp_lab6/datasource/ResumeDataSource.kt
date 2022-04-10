@@ -1,18 +1,19 @@
-package com.miu.mdp.mdp_lab6
+package com.miu.mdp.mdp_lab6.datasource
 
 import android.content.Context
 import com.google.gson.Gson
+import com.miu.mdp.mdp_lab6.logic.authUser
+import com.miu.mdp.mdp_lab6.model.*
 import java.io.Serializable
 
 class ResumeDataSource(context: Context?) : ResumeRepository {
     private val sharedPreferences = context?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
 
     override fun saveUser(fullName: String, email: String, password: String) {
-        val user = User(
-            "https://media-exp1.licdn.com/dms/image/C4D03AQEO2NUI9S-aXA/" +
-                    "profile-displayphoto-shrink_800_800/0/1617311178568?e=1654732800&v=beta&t=04z2pDL0kzrSQehx_Sthbq2d54opQ70_KZ5OX4FBSCE",
+        val sUser = SessionUser(
+            "https://media-exp1.licdn.com/dms/image/C4D03AQHiF71HlZEOIg/profile-displayphoto-shrink_800_800/0/1612634117678?e=1654732800&v=beta&t=sPkUVAhaRARqfnmY369EnQ3m3Kkk00762JHCkJ8acC0",
             fullName,
-            "Software Engineer",
+            "Mobile Applications Developer",
             "Completed on-campus studies and currently taking distance education courses to complete a Master's Degree in Computer Science (Available for full-time, W-2 employment).",
             "Mostly self motivated, I am an experienced software engineer with 5 years experience in back end development for enterprise and data intensive applications using java and SQL programming languages, the Spring Framework , REST and Service Oriented Architecture. I have a passion for Fintech driven by my working experience with financial institutions." +
                     " I aim for growth and value addition leaving a positive mark everywhere i work.",
@@ -23,14 +24,27 @@ class ResumeDataSource(context: Context?) : ResumeRepository {
                 "Platforms" to "MacOS, Windows"
             )
         )
+        val aUser = AuthUser(
+            email, password
+        )
         sharedPreferences?.edit().apply {
-            this?.putString(email, changeToString(user))
+            this?.putString("a$email", changeToString(aUser))
             this?.apply()
         }
+        sharedPreferences?.edit().apply {
+            this?.putString("s$email", changeToString(sUser))
+            this?.apply()
+        }
+
+        authUser = aUser
     }
 
-    override fun getUser(email: String): User? {
-        return sharedPreferences?.getString(email, null)?.let { fromString(it) }
+    override fun getUser(email: String): AuthUser? {
+        return sharedPreferences?.getString("a$email", null)?.let { fromString(it) }
+    }
+
+    override fun getSessionUser(email: String): SessionUser? {
+        return sharedPreferences?.getString("s$email", null)?.let { fromString(it) }
     }
 
     override fun getEducation(): Education {
@@ -52,7 +66,7 @@ class ResumeDataSource(context: Context?) : ResumeRepository {
             "2010-2014",
             "https://pbs.twimg.com/profile_images/491914437872197632/Qamuz0G7_400x400.png"
         )
-        val gayaza = School(
+        val kibuli = School(
             "Gayaza high school",
             "Advanced level certification, Majors (Physics, Chemistry, Mathematics, Economics)",
             "2010-2014",
@@ -65,7 +79,7 @@ class ResumeDataSource(context: Context?) : ResumeRepository {
             "https://media-exp1.licdn.com/dms/image/C4E0BAQEWaz0Z9HydZw/company-logo_200_200/0/1608137333355?e=2147483647&v=beta&t=Qx_yZSh9xl5rpDRlfaYxWnS9XfgiBNc7ek5_89-L7Sk"
         )
         return Education(
-            listOf(miu, muk, aptechCert, gayaza, budo)
+            listOf(miu, muk, aptechCert, kibuli, budo)
         )
     }
 

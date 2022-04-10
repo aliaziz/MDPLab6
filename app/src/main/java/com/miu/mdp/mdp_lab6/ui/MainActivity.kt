@@ -1,12 +1,15 @@
-package com.miu.mdp.mdp_lab6
+package com.miu.mdp.mdp_lab6.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
+import com.miu.mdp.mdp_lab6.R
 import com.miu.mdp.mdp_lab6.databinding.ActivityMainBinding
+import com.miu.mdp.mdp_lab6.logic.authUser
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
@@ -108,6 +111,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.logout -> {
+                authUser = null
                 val intent = Intent(this, LandingActivity::class.java)
                 startActivity(intent)
                 finish()
